@@ -17,7 +17,6 @@ Thumbs.db
 /.anvil
 *~
 .idea/
-
 .ipynb_checkpoints/
 *.ipynb
 *.ipynb
