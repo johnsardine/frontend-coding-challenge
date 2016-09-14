@@ -1,0 +1,101 @@
+{
+  "id": 1,
+  "source_language": {
+    "name": "English",
+    "shortname": "en"
+  },
+  "target_language": {
+    "name": "Portuguese(BR)",
+    "shortname": "pt-br"
+  },
+  "source_segments": [
+    {
+      "id": "57cefc86088efd7964394e2b",
+      "text": "Hello, Thank you for your report.",
+      "annotations": {
+        "markup": [
+          {"position": 0, "tag": "<span class=\"markup\">"},
+          {"position": 7, "tag": "</span>"},
+          {"position": 7, "tag": "<span class=\"markup\">"},
+          {"position": 33, "tag": "</span>"}
+        ]
+      }
+    },
+    {
+      "id": "57cefc86088efd7964394e2c",
+      "template": "The comment has been removed for violating our Community Guidelines.",
+      "annotations": {
+        "markup": [
+          {"position": 0, "tag": "<span class=\"wrapper\">"},
+          {"position": 68, "tag": "</span>"}
+        ],
+        "glossary": [
+          {"start": 47, "length": 20}
+        ]
+      }
+    },
+    {
+      "id": "57cefc86088efd7964394e2d",
+      "template": "Sincerely, Change.org(From US Office/Help desk)",
+      "annotations": {
+        "markup": [
+          {"position": 0, "tag": "<span class=\"markup\">"},
+          {"position": 11, "tag": "</span>"},
+          {"position": 11, "tag": "<span class=\"markup\">"},
+          {"position": 21, "tag": "</span>"},
+          {"position": 21, "tag": "<span class=\"markup\">"},
+          {"position": 47, "tag": "</span>"}
+        ],
+        "glossary": [
+          {"start": 11, "length": 10},
+          {"start": 37, "length": 9}
+        ]
+      }
+    }
+  ],
+  "target_segments": [
+    {
+      "id": "57cefc86088efd7964394e2b",
+      "template": "Olá, Obrigado pelo seu relatório.",
+      "annotations": {
+        "markup": [
+          {"position": 0, "tag": "<span class=\"markup\">"},
+          {"position": 5, "tag": "</span>"},
+          {"position": 5, "tag": "<span class=\"markup\">"},
+          {"position": 33, "tag": "</span>"}
+        ]
+      }
+    },
+    {
+      "id": "57cefc86088efd7964394e2c",
+      "template": "O comentário foi removido por violar a nossa Diretrizes Da Comunidade.",
+      "annotations": {
+        "markup": [
+          {"position": 0, "tag": "<span class=\"wrapper\">"},
+          {"position": 70, "tag": "</span>"}
+        ],
+        "glossary": [
+          {"start": 45, "length": 24}
+        ]
+      }
+    },
+    {
+      "id": "57cefc86088efd7964394e2d",
+      "template": "Atenciosamente, Change.org(A partir de US Escritório /central de ajuda)",
+      "annotations": {
+        "markup": [
+          {"position": 0, "tag": "<span class=\"markup\">"},
+          {"position": 16, "tag": "</span>"},
+          {"position": 16, "tag": "<span class=\"markup\">"},
+          {"position": 26, "tag": "</span>"},
+          {"position": 26, "tag": "<span class=\"markup\">"},
+          {"position": 71, "tag": "</span>"}
+        ],
+        "glossary": [
+          {"start": 16, "length": 10},
+          {"start": 54, "length": 16}
+        ]
+      }
+    }
+  ]
+}

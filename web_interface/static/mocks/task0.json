@@ -1,0 +1,175 @@
+{
+  "id": 0,
+  "source_language": {
+    "name": "English",
+    "shortname": "en"
+  },
+  "target_language": {
+    "name": "Portuguese(BR)",
+    "shortname": "pt-br"
+  },
+  "source_segments": [
+    {
+      "id": "565ed9a013f13b3442a2cfec",
+      "text": "Classy",
+      "annotations": {
+        "markup": [
+          {"position": 0, "tag": "<span class=\"wrapper\">"},
+          {"position": 6, "tag": "</span>"}
+        ]
+      }
+    },
+    {
+      "id": "565ed9a013f13b3442a2cfee",
+      "text": "Thank you for trying out our demo ThemeBuilder!",
+      "annotations": {
+        "markup": [
+          {"position": 0, "tag": "<span class=\"wrapper\">"},
+          {"position": 47, "tag": "</span>"}
+        ]
+      }
+    },
+    {
+      "id": "565ed9a013f13b3442a2cff0",
+      "text": "Once purchased this theme you’ll receive a link to our themebuilder so you can fully customize your newsletter.",
+      "annotations": {
+        "markup": [
+          {"position": 0, "tag": "<span class=\"wrapper\">"},
+          {"position": 111, "tag": "</span>"}
+        ]
+      }
+    },
+    {
+      "id": "565ed9a013f13b3442a2cff1",
+      "text": "Click on the link and start building!",
+      "annotations": {
+        "markup": [
+          {"position": 0, "tag": "<span class=\"wrapper\">"},
+          {"position": 37, "tag": "</span>"}
+        ]
+      }
+    },
+    {
+      "id": "565ed9a013f13b3442a2cff3",
+      "text": "Purchase this template",
+      "annotations": {
+        "markup": [
+          {"position": 0, "tag": "<span class=\"wrapper\">"},
+          {"position": 22, "tag": "</span>"}
+        ]
+      }
+    },
+    {
+      "id": "565ed9a013f13b3442a2cff5",
+      "text": "Browse other templates",
+      "annotations": {
+        "markup": [
+          {"position": 0, "tag": "<span class=\"wrapper\">"},
+          {"position": 22, "tag": "</span>"}
+        ]
+      }
+    },
+    {
+      "id": "565ed9a013f13b3442a2cff7",
+      "text": "Thank you for your support!",
+      "annotations": {
+        "markup": [
+          {"position": 0, "tag": "<span class=\"wrapper\">"},
+          {"position": 27, "tag": "</span>"}
+        ]
+      }
+    },
+    {
+      "id": "565ed9a013f13b3442a2cff8",
+      "text": "Team RocketWay",
+      "annotations": {
+        "markup": [
+          {"position": 0, "tag": "<span class=\"wrapper\">"},
+          {"position": 14, "tag": "</span>"}
+        ]
+      }
+    }
+  ],
+  "target_segments": [
+    {
+      "id": "565ed9a013f13b3442a2cfec",
+      "template": "Classy",
+      "annotations": {
+        "markup": [
+          {"position": 0, "tag": "<span class=\"wrapper\">"},
+          {"position": 6, "tag": "</span>"}
+        ]
+      }
+    },
+    {
+      "id": "565ed9a013f13b3442a2cfee",
+      "template": "Obrigado por testar a nossa ThemeBuilder demo!",
+      "annotations": {
+        "markup": [
+          {"position": 0, "tag": "<span class=\"wrapper\">"},
+          {"position": 46, "tag": "</span>"}
+        ]
+      }
+    },
+    {
+      "id": "565ed9a013f13b3442a2cff0",
+      "template": "Uma vez adquirido este tema você receberá um link para o nosso themebuilder assim que você pode personalizar totalmente seu boletim de notícias.",
+      "annotations": {
+        "markup": [
+          {"position": 0, "tag": "<span class=\"wrapper\">"},
+          {"position": 144, "tag": "</span>"}
+        ]
+      }
+    },
+    {
+      "id": "565ed9a013f13b3442a2cff1",
+      "template": "Clique no link e começar a construir!",
+      "annotations": {
+        "markup": [
+          {"position": 0, "tag": "<span class=\"wrapper\">"},
+          {"position": 37, "tag": "</span>"}
+        ]
+      }
+    },
+    {
+      "id": "565ed9a013f13b3442a2cff3",
+      "template": "Comprar este modelo",
+      "annotations": {
+        "markup": [
+          {"position": 0, "tag": "<span class=\"wrapper\">"},
+          {"position": 19, "tag": "</span>"}
+        ]
+      }
+    },
+    {
+      "id": "565ed9a013f13b3442a2cff5",
+      "template": "Ver outros modelos",
+      "annotations": {
+        "markup": [
+          {"position": 0, "tag": "<span class=\"wrapper\">"},
+          {"position": 18, "tag": "</span>"}
+        ]
+      }
+    },
+    {
+      "id": "565ed9a013f13b3442a2cff7",
+      "template": "Obrigado pelo suporte!",
+      "annotations": {
+        "markup": [
+          {"position": 0, "tag": "<span class=\"wrapper\">"},
+          {"position": 22, "tag": "</span>"}
+        ]
+      }
+    },
+    {
+      "id": "565ed9a013f13b3442a2cff8",
+      "template": "Equipe Foguetovia",
+      "annotations": {
+        "markup": [
+          {"position": 0, "tag": "<span class=\"wrapper\">"},
+          {"position": 17, "tag": "</span>"}
+        ]
+      }
+    }
+  ]
+}
