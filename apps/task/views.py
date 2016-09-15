@@ -1,5 +1,4 @@
 import os
-import logging
 import json
 
 from django.conf import settings
@@ -29,11 +28,10 @@ class TaskView(View):
         task_path = os.path.join(settings.STATICFILES_DIRS[0],
                                  'mocks/task{}.json'.format(task_index))
         task_json = open(task_path, 'r').read()
+
         return HttpResponse(task_json, content_type='application/json')
 
     def post(self, request, **kwargs):
-        import pdb; pdb.set_trace()
-
         try:
             task_dict = json.loads(request.body)
             task_index = task_dict.get('id')

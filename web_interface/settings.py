@@ -52,6 +52,15 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.messages.context_processors.messages",
+    "django.core.context_processors.debug",
+    'django.core.context_processors.csrf',
+    "django.core.context_processors.static",
+    "django.core.context_processors.request",
+)
+
+
 ROOT_URLCONF = 'web_interface.urls'
 
 TEMPLATES = [
@@ -106,3 +115,20 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
 )
+
+LOGGING = {
+    'version': 1,
+    'handlers': {
+        'console':{
+            'level':'DEBUG',
+            'class':'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django.request': {
+            'handlers':['console'],
+            'propagate': True,
+            'level':'DEBUG',
+        }
+    },
+}
