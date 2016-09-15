@@ -17,10 +17,58 @@ http://jamie.curle.io/posts/installing-pip-virtualenv-and-virtualenvwrapper-on-o
 
 
 ### Instructions
-Create a simple TemplateView to display the text returned by the endpoint GET /api/v1/task/ (task.json). The user has to be able to see both "source" and "target" texts on the interface. Only the "target" text can be editable.
+Create a simple TemplateView to display the text returned by the endpoint (GET)/api/v1/task/ (task.json). The user has to be able to see both "source" and "target" texts on the interface. Only the "target" text can be editable.
 
-Mark the text highlighting the annotations on the task.json.
+Mark the text highlighting the annotations found on each on task.json
 
-# 4º, call smartcheck and display issues on sentences
+Use SmartCheck to detect and highlight the issues returned. This endpoint should be contacted when the user first sees the task and while he is editing.
 
-# 6º, preserve annotations
+Preserve the annotations until the user submits the edited task.json to (POST)/api/v1/task/
+
+
+### SmartCheck
+#### cURL example:
+```shell
+curl -X POST -H "Content-Type: application/json" -d '{
+	"src_segments": ["Tuna fish"],
+	"trg_segments": ["Atumj"],
+	"src_lang": "en",
+	"trg_lang": "pt",
+	"fast_analysis": true
+}' "https://jobcheck.unbabel.com/analyze_job_segments"
+```
+
+#### Response example:
+```json
+{
+    "qa_description": {
+        "sentence_issues": {
+            "spelling": [
+                {
+                    "errors": "Atumj",
+                    "description": "Misspelled word: Atumj",
+                    "suggestions": [
+                        "Atum",
+                        "Atuam",
+                        "Tum",
+                        "Atuns"
+                    ],
+                    "err_start": 0,
+                    "rule": "ASPELL-Atumj",
+                    "seg_id": 0,
+                    "err_length": 5,
+                    "context": "Atumj",
+                    "type": "error"
+                }
+            ]
+        },
+        "document_consistency": {}
+    },
+    "qa_summary": {
+        "major": 1,
+        "critical": 0,
+        "minor": 0
+    },
+    "qa_score": 3.8
+}
+```
