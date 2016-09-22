@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html ng-app="editor">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Unbabel Editor</title>
+    <link rel="stylesheet" href="{% static 'common/css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'editor/css/style.css' %}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        {%verbatim%}
+        <div ng-controller="EditorController">
+
+            <!-- Editor Headers - Source and target languages -->
+            <header class="row editor-header">
+                <div class="column-6">
+                    <h2>{{source_language.name}}</h2>
+                </div>
+                <div class="column-6">
+                    <h2>{{target_language.name}}</h2>
+                </div>
+            </header>
+
+            <div class="editor-main">
+
+                <!-- Decorator element - Fakes columns behind the rows -->
+                <div class="editor-background">
+                    <div class="row">
+                        <div class="column-6">
+                            <div class="editor-decorator editor-decorator--as-background editor-decorator--disabled"></div>
+                        </div>
+                        <div class="column-6">
+                            <div class="editor-decorator editor-decorator--as-background"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Decorator element - Fakes columns behind the rows -->
+
+                <div class="editor-contents">
+
+                    <div class="row" ng-repeat="nuggetRow in nuggets">
+                        <div class="column-6">
+
+                            <div editor-display-nugget nugget="nuggetRow.source" ue-editable="false" class="editor-context editor-column editor-row editor-context--disabled"></div>
+
+                        </div>
+                        <div class="column-6">
+
+                            <div editor-edit-nugget nugget="nuggetRow.target" ue-editable="true" class="editor-context editor-column editor-row"></div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <p>
+                <button type="button">Finish Task</button>
+            </p>
+
+            <pre class="task-data-preview">{{nuggets | json}}</pre>
+
+        </div>
+        {%endverbatim%}
+
+    </div>
+
+    <script src="{% static 'common/js/angular.js' %}"></script>
+    <script src="{% static 'common/js/angular.sanitize.js' %}"></script>
+    <script src="{% static 'editor/js/app.module.js' %}"></script>
+    <script src="{% static 'editor/js/directives/contenteditable.js' %}"></script>
+    <script src="{% static 'editor/js/directives/EditorDisplayNuggetDirective.js' %}"></script>
+    <script src="{% static 'editor/js/directives/EditorEditNuggetDirective.js' %}"></script>
+    <script src="{% static 'editor/js/services/TaskManagerService.js' %}"></script>
+    <script src="{% static 'editor/js/services/EditorManipulatorService.js' %}"></script>
+    <script src="{% static 'editor/js/controllers/EditorController.js' %}"></script>
+    <script src="{% static 'editor/js/controllers/EditorEditNuggetController.js' %}"></script>
+    <script src="{% static 'editor/js/controllers/EditorDisplayNuggetController.js' %}"></script>
+</body>
+
+</html>
