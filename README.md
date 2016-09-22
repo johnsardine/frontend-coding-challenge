@@ -17,9 +17,11 @@ http://jamie.curle.io/posts/installing-pip-virtualenv-and-virtualenvwrapper-on-o
 
 
 ### Instructions
-Create a simple TemplateView to display the text returned by the endpoint (GET)/api/v1/task/ (task.json). The user has to be able to see both "source" and "target" texts on the interface. Only the "target" text can be editable.
+Create a simple TemplateView for the edit interface under the root URL (https://127.0.0.1:8000/).
+The text is returned by the endpoint (GET)/api/v1/task/. The user has to be able to see both "source" and "target" texts on the interface.
+Only the "target" text can be editable. Each "nugget" should be a paragraph and each has a set o "segments" separated by the markup annotations.
 
-Mark the text highlighting the annotations found on each on task.json
+Mark the text highlighting the annotations returned with the text nuggets.
 
 Use SmartCheck to detect and highlight the issues returned. This endpoint should be contacted when the user first sees the task and while he is editing.
 

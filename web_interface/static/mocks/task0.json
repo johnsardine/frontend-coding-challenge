@@ -8,7 +8,7 @@
     "name": "Portuguese(BR)",
     "shortname": "pt-br"
   },
-  "source_segments": [
+  "source_nuggets": [
     {
       "id": "565ed9a013f13b3442a2cfec",
       "text": "Classy",
@@ -90,7 +90,7 @@
       }
     }
   ],
-  "target_segments": [
+  "target_nuggets": [
     {
       "id": "565ed9a013f13b3442a2cfec",
       "template": "Classy",

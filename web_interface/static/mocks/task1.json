@@ -8,7 +8,7 @@
     "name": "Portuguese(BR)",
     "shortname": "pt-br"
   },
-  "source_segments": [
+  "source_nuggets": [
     {
       "id": "57cefc86088efd7964394e2b",
       "text": "Hello, Thank you for your report.",
@@ -53,7 +53,7 @@
       }
     }
   ],
-  "target_segments": [
+  "target_nuggets": [
     {
       "id": "57cefc86088efd7964394e2b",
       "template": "Olá, Obrigado pelo seu relatório.",
