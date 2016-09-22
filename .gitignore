@@ -20,3 +20,9 @@ Thumbs.db
 .ipynb_checkpoints/
 *.ipynb
 *.ipynb
+/.Python
+/bin
+/include
+/lib
+/pip-selfcheck.json
+/db.sqlite3
