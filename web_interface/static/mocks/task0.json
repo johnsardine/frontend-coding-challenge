@@ -1,5 +1,5 @@
 {
-  "id": 0,
+  "id": 1,
   "source_language": {
     "name": "English",
     "shortname": "en"
@@ -10,164 +10,90 @@
   },
   "source_nuggets": [
     {
-      "id": "565ed9a013f13b3442a2cfec",
-      "text": "Classy",
+      "id": "57cefc86088efd7964394e2b",
+      "text": "Hello, Thank you for your report.",
       "annotations": {
         "markup": [
-          {"position": 0, "tag": "<span class=\"wrapper\">"},
-          {"position": 6, "tag": "</span>"}
+          {"position": 0, "tag": "<span class=\"markup\">"},
+          {"position": 7, "tag": "</span>"},
+          {"position": 7, "tag": "<span class=\"markup\">"},
+          {"position": 33, "tag": "</span>"}
         ]
       }
     },
     {
-      "id": "565ed9a013f13b3442a2cfee",
-      "text": "Thank you for trying out our demo ThemeBuilder!",
+      "id": "57cefc86088efd7964394e2c",
+      "template": "The comment has been removed for violating our Community Guidelines.",
       "annotations": {
         "markup": [
           {"position": 0, "tag": "<span class=\"wrapper\">"},
+          {"position": 68, "tag": "</span>"}
+        ],
+        "glossary": [
+          {"start": 47, "length": 20}
+        ]
+      }
+    },
+    {
+      "id": "57cefc86088efd7964394e2d",
+      "template": "Sincerely, Change.org(From US Office/Help desk)",
+      "annotations": {
+        "markup": [
+          {"position": 0, "tag": "<span class=\"markup\">"},
+          {"position": 11, "tag": "</span>"},
+          {"position": 11, "tag": "<span class=\"markup\">"},
+          {"position": 21, "tag": "</span>"},
+          {"position": 21, "tag": "<span class=\"markup\">"},
           {"position": 47, "tag": "</span>"}
-        ]
-      }
-    },
-    {
-      "id": "565ed9a013f13b3442a2cff0",
-      "text": "Once purchased this theme you’ll receive a link to our themebuilder so you can fully customize your newsletter.",
-      "annotations": {
-        "markup": [
-          {"position": 0, "tag": "<span class=\"wrapper\">"},
-          {"position": 111, "tag": "</span>"}
-        ]
-      }
-    },
-    {
-      "id": "565ed9a013f13b3442a2cff1",
-      "text": "Click on the link and start building!",
-      "annotations": {
-        "markup": [
-          {"position": 0, "tag": "<span class=\"wrapper\">"},
-          {"position": 37, "tag": "</span>"}
-        ]
-      }
-    },
-    {
-      "id": "565ed9a013f13b3442a2cff3",
-      "text": "Purchase this template",
-      "annotations": {
-        "markup": [
-          {"position": 0, "tag": "<span class=\"wrapper\">"},
-          {"position": 22, "tag": "</span>"}
-        ]
-      }
-    },
-    {
-      "id": "565ed9a013f13b3442a2cff5",
-      "text": "Browse other templates",
-      "annotations": {
-        "markup": [
-          {"position": 0, "tag": "<span class=\"wrapper\">"},
-          {"position": 22, "tag": "</span>"}
-        ]
-      }
-    },
-    {
-      "id": "565ed9a013f13b3442a2cff7",
-      "text": "Thank you for your support!",
-      "annotations": {
-        "markup": [
-          {"position": 0, "tag": "<span class=\"wrapper\">"},
-          {"position": 27, "tag": "</span>"}
-        ]
-      }
-    },
-    {
-      "id": "565ed9a013f13b3442a2cff8",
-      "text": "Team RocketWay",
-      "annotations": {
-        "markup": [
-          {"position": 0, "tag": "<span class=\"wrapper\">"},
-          {"position": 14, "tag": "</span>"}
+        ],
+        "glossary": [
+          {"start": 11, "length": 10},
+          {"start": 37, "length": 9}
         ]
       }
     }
   ],
   "target_nuggets": [
     {
-      "id": "565ed9a013f13b3442a2cfec",
-      "template": "Classy",
+      "id": "57cefc86088efd7964394e2b",
+      "template": "Olá, Obrigado pelo seu relatório.",
       "annotations": {
         "markup": [
-          {"position": 0, "tag": "<span class=\"wrapper\">"},
-          {"position": 6, "tag": "</span>"}
+          {"position": 0, "tag": "<span class=\"markup\">"},
+          {"position": 5, "tag": "</span>"},
+          {"position": 5, "tag": "<span class=\"markup\">"},
+          {"position": 33, "tag": "</span>"}
         ]
       }
     },
     {
-      "id": "565ed9a013f13b3442a2cfee",
-      "template": "Obrigado por testar a nossa ThemeBuilder demo!",
+      "id": "57cefc86088efd7964394e2c",
+      "template": "O comentário foi removido por violar a nossa Diretrizes Da Comunidade.",
       "annotations": {
         "markup": [
           {"position": 0, "tag": "<span class=\"wrapper\">"},
-          {"position": 46, "tag": "</span>"}
+          {"position": 70, "tag": "</span>"}
+        ],
+        "glossary": [
+          {"start": 45, "length": 24}
         ]
       }
     },
     {
-      "id": "565ed9a013f13b3442a2cff0",
-      "template": "Uma vez adquirido este tema você receberá um link para o nosso themebuilder assim que você pode personalizar totalmente seu boletim de notícias.",
+      "id": "57cefc86088efd7964394e2d",
+      "template": "Atenciosamente, Change.org(A partir de US Escritório /central de ajuda)",
       "annotations": {
         "markup": [
-          {"position": 0, "tag": "<span class=\"wrapper\">"},
-          {"position": 144, "tag": "</span>"}
-        ]
-      }
-    },
-    {
-      "id": "565ed9a013f13b3442a2cff1",
-      "template": "Clique no link e começar a construir!",
-      "annotations": {
-        "markup": [
-          {"position": 0, "tag": "<span class=\"wrapper\">"},
-          {"position": 37, "tag": "</span>"}
-        ]
-      }
-    },
-    {
-      "id": "565ed9a013f13b3442a2cff3",
-      "template": "Comprar este modelo",
-      "annotations": {
-        "markup": [
-          {"position": 0, "tag": "<span class=\"wrapper\">"},
-          {"position": 19, "tag": "</span>"}
-        ]
-      }
-    },
-    {
-      "id": "565ed9a013f13b3442a2cff5",
-      "template": "Ver outros modelos",
-      "annotations": {
-        "markup": [
-          {"position": 0, "tag": "<span class=\"wrapper\">"},
-          {"position": 18, "tag": "</span>"}
-        ]
-      }
-    },
-    {
-      "id": "565ed9a013f13b3442a2cff7",
-      "template": "Obrigado pelo suporte!",
-      "annotations": {
-        "markup": [
-          {"position": 0, "tag": "<span class=\"wrapper\">"},
-          {"position": 22, "tag": "</span>"}
-        ]
-      }
-    },
-    {
-      "id": "565ed9a013f13b3442a2cff8",
-      "template": "Equipe Foguetovia",
-      "annotations": {
-        "markup": [
-          {"position": 0, "tag": "<span class=\"wrapper\">"},
-          {"position": 17, "tag": "</span>"}
+          {"position": 0, "tag": "<span class=\"markup\">"},
+          {"position": 16, "tag": "</span>"},
+          {"position": 16, "tag": "<span class=\"markup\">"},
+          {"position": 26, "tag": "</span>"},
+          {"position": 26, "tag": "<span class=\"markup\">"},
+          {"position": 71, "tag": "</span>"}
+        ],
+        "glossary": [
+          {"start": 16, "length": 10},
+          {"start": 54, "length": 16}
         ]
       }
     }
