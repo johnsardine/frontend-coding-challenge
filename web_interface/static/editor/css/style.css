@@ -1,0 +1,133 @@
+html {
+  font-family: sans-serif;
+  color: #444;
+  font-size: 14px;
+  line-height: 1.8em;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+.container {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.column,
+.column-6 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.column {
+  width: 100%;
+}
+.column-6 {
+    width: 50%;
+}
+.editor-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.editor-background > .row {
+    height: 100%;
+}
+.editor-decorator {
+  padding: 5px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+.editor-column {
+    border: 1px solid transparent;
+}
+.editor-layer {
+    padding: 5px 15px;
+}
+.editor-decorator--as-background {
+    height: 100%;
+}
+.editor-context {
+  position: relative;
+}
+.editor-context--disabled {
+  cursor: not-allowed;
+}
+.editor-row {
+    margin: 10px 0;
+}
+.editor-main {
+  position: relative;
+  z-index: 2;
+}
+.editor-layer--main {
+  position: relative;
+  z-index: 2;
+}
+.editor-layer--main:focus {
+  outline: none;
+}
+.editor-layer--secondary {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  color: transparent;
+}
+.editor-decorator--disabled {
+  cursor: not-allowed;
+  background-color: #ececec;
+}
+
+.editor-annotation {
+  position: relative;
+}
+.editor-annotation--error::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAJ0lEQVQYV2NkQALnTUz+G545wwgSAhMgABOE0WAJZJUwPiO6IMwEAFxXFjtKy/B1AAAAAElFTkSuQmCC);
+  background-size: 6px 4px;
+}
+.editor-annotation--glossary {
+  background-color: rgba(248, 202, 0, 0.5);
+}
+/*
+.editor-annotation--glossary::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  right: -4px;
+  left: -4px;
+  border-radius: 4px;
+  background-color: rgba(248, 202, 0, 0.5);
+}
+*/
+
+
+/* Default Markup */
+span.wrapper,
+span.markup {
+    background-color: rgba(0, 0, 0, 0.1);
+    outline: 1px solid rgba(0, 0, 0, 0.1);
+    outline-offset: 1px;
+}
+
+.task-data-preview {
+    font-size: 10px;
+    line-height: 1em;
+}
