@@ -8,8 +8,17 @@ editorApp.factory('TaskManagerService', ['APP_CONFIG', '$http', function($appcon
         });
     }
 
+    function postTask(task) {
+        return $http({
+            method: 'POST',
+            url: $appconfig.api.base_url + '/api/v1/task/',
+            data: task
+        });
+    }
+
     // Expose api
     return {
         getTask: getTask,
+        postTask: postTask,
     };
 }]);

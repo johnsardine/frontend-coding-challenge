@@ -1,5 +1,7 @@
 editorApp.controller('EditorController', ['$scope', 'TaskManagerService', function($scope, TaskManagerService) {
 
+    $scope.task = {};
+
     // Language
     $scope.source_language = {};
     $scope.target_language = {};
@@ -11,6 +13,8 @@ editorApp.controller('EditorController', ['$scope', 'TaskManagerService', functi
     Configures this editor context with the current task properties
      */
     function setupEditorForTask(task) {
+
+        $scope.task = task;
 
         // Language
         $scope.source_language = task.source_language;
@@ -60,12 +64,32 @@ editorApp.controller('EditorController', ['$scope', 'TaskManagerService', functi
         };
     }
 
-    // Starting point
-    TaskManagerService.getTask().then(function(response) {
-        data = response.data;
+    $scope.submitTask = function() {
 
-        // Initial task display
-        setupEditorForTask(data);
-    });
+        var splitOutput = restoreSourceAndTarget($scope.nuggets);
+
+        var task = {};
+        task.id = $scope.task.id;
+        task.source_language = $scope.task.source_language;
+        task.target_language = $scope.task.target_language;
+        task.source_segments = splitOutput.source;
+        task.target_segments = splitOutput.target;
+
+        TaskManagerService.postTask(task).then(function() {
+            loadTask();
+        });
+    };
+
+    function loadTask() {
+        TaskManagerService.getTask().then(function(response) {
+            data = response.data;
+
+            // Initial task display
+            setupEditorForTask(data);
+        });
+    }
+
+    // Starting point
+    loadTask();
 
 }]);

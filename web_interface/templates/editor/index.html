@@ -15,7 +15,7 @@
     <div class="container">
 
         {%verbatim%}
-        <div ng-controller="EditorController">
+        <div ng-controller="EditorController" ng-class="{'debug':isDebug}">
 
             <!-- Editor Headers - Source and target languages -->
             <header class="row editor-header">
@@ -44,17 +44,17 @@
 
                 <div class="editor-contents">
 
-                    <div class="row" ng-repeat="nuggetRow in nuggets" ng-controller="EditorRowController">
+                    <div class="row editor-row" ng-repeat="nuggetRow in nuggets" ng-controller="EditorRowController">
                         <div class="column-6">
 
-                            <div class="editor-context editor-column editor-row editor-context--disabled">
+                            <div class="editor-context editor-column editor-context--disabled">
                                 <div class="editor-layer" ng-bind-html="sourceWithMarkup"></div>
                             </div>
 
                         </div>
                         <div class="column-6">
 
-                            <div class="editor-context editor-column editor-row">
+                            <div class="editor-context editor-column">
                                 <div
                                     class="editor-layer editor-layer--main"
                                     ng-bind-html="targetWithMarkup"
@@ -73,10 +73,12 @@
             </div>
 
             <p>
-                <button type="button">Finish Task</button>
-            </p>
+                <button type="button" ng-click="submitTask()">Submit Task</button>
 
-            <pre class="task-data-preview">{{nuggets | json}}</pre>
+                <label>
+                    <input type="checkbox" ng-model="isDebug"> Show markup
+                </label>
+            </p>
 
         </div>
         {%endverbatim%}

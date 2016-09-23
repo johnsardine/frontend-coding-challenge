@@ -109,7 +109,8 @@ Better looking glossary indication - does not work with multiline
 
 /* Show default markup, for debugging only */
 
-span.wrapper, span.markup {
+.debug span.wrapper,
+.debug span.markup {
     background-color: rgba(0, 0, 0, 0.1);
     outline: 1px solid rgba(0, 0, 0, 0.1);
     outline-offset: 1px;

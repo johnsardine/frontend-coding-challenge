@@ -6,6 +6,7 @@ editorApp.controller('EditorRowController', ['$scope', '$timeout', '$http', 'Edi
     //$scope.rowTargetText = ''; // Model containing targetWithMarkup
 
     $scope.sourceWithMarkup = EditorManipulatorService.getAnnotatedText($scope.nuggetRow.source);
+
     $scope.targetWithMarkup = EditorManipulatorService.getAnnotatedText($scope.nuggetRow.target);
 
     $scope.$watch(function() {
@@ -18,6 +19,8 @@ editorApp.controller('EditorRowController', ['$scope', '$timeout', '$http', 'Edi
 
     // Detect target changes
     $scope.didChangeTargetText = function() {
+
+        console.log('didChangeTargetText');
 
         if (timeout !== null) {
             $timeout.cancel(timeout);
@@ -77,5 +80,12 @@ editorApp.controller('EditorRowController', ['$scope', '$timeout', '$http', 'Edi
 
         $scope.rowTargetText = text;
     }
+
+    // Push changes to main array collection
+    $scope.$watch(function() {
+        return $scope.rowTargetText;
+    }, function() {
+        $scope.nuggetRow.target.text = EditorManipulatorService.getPureText($scope.rowTargetText);
+    });
 
 }]);
