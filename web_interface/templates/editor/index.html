@@ -44,15 +44,26 @@
 
                 <div class="editor-contents">
 
-                    <div class="row" ng-repeat="nuggetRow in nuggets">
+                    <div class="row" ng-repeat="nuggetRow in nuggets" ng-controller="EditorRowController">
                         <div class="column-6">
 
-                            <div editor-display-nugget nugget="nuggetRow.source" ue-editable="false" class="editor-context editor-column editor-row editor-context--disabled"></div>
+                            <div class="editor-context editor-column editor-row editor-context--disabled">
+                                <div class="editor-layer" ng-bind-html="sourceWithMarkup"></div>
+                            </div>
 
                         </div>
                         <div class="column-6">
 
-                            <div editor-edit-nugget nugget="nuggetRow.target" ue-editable="true" class="editor-context editor-column editor-row"></div>
+                            <div class="editor-context editor-column editor-row">
+                                <div
+                                    class="editor-layer editor-layer--main"
+                                    ng-bind-html="targetWithMarkup"
+                                    ng-model="rowTargetText"
+                                    contenteditable="true"
+                                    ng-change="didChangeTargetText()"
+                                    autocorrect="off" autocapitalize="off" spellcheck="false">
+                                </div>
+                            </div>
 
                         </div>
                     </div>
@@ -81,6 +92,7 @@
     <script src="{% static 'editor/js/services/TaskManagerService.js' %}"></script>
     <script src="{% static 'editor/js/services/EditorManipulatorService.js' %}"></script>
     <script src="{% static 'editor/js/controllers/EditorController.js' %}"></script>
+    <script src="{% static 'editor/js/controllers/EditorRowController.js' %}"></script>
     <script src="{% static 'editor/js/controllers/EditorEditNuggetController.js' %}"></script>
     <script src="{% static 'editor/js/controllers/EditorDisplayNuggetController.js' %}"></script>
 </body>

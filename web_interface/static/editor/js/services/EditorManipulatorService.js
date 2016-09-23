@@ -15,23 +15,42 @@ editorApp.factory('EditorManipulatorService', ['APP_CONFIG', function($appconfig
         return nugget.annotations.glossary ? nugget.annotations.glossary : [];
     }
 
+    function applyNuggetGlossary(nugget, input) {
+
+        var sourceText = getNuggetText(nugget);
+        var glossary = getNuggetGlossary(nugget);
+
+        // Find glossary words
+        var glossaryOpenTag = $appconfig.glossary.open_tag;
+        var glossaryCloseTag = $appconfig.glossary.close_tag;
+        for (i = 0; i < glossary.length; i++) {
+            var wordBounds = glossary[i];
+            var word = sourceText.substr(wordBounds.start, wordBounds.length);
+            input = input.replace(word, glossaryOpenTag + word + glossaryCloseTag);
+        }
+        return input;
+    }
+
     // Grabs the nugget text and inserts the markup annotations
-    function getTextWithMarkup(nugget) {
+    function getTextWithMarkupAndGlossary(nugget) {
+
+        // For loops
+        var i;
 
         // Extract markup from nugget
-        var annotations = getNuggetMarkup(nugget);
+        var markup = getNuggetMarkup(nugget);
 
         // Extract text from nugget
-        var inputText = getNuggetText(nugget);
+        var sourceText = getNuggetText(nugget);
 
         // Split input text for manipulation as array
-        var inputTextAsArray = inputText.split('');
+        var sourceTextAsArray = sourceText.split('');
 
         // Insert markup
         var insertionCount = 0;
-        for (var i = 0; i < annotations.length; i++) {
+        for (i = 0; i < markup.length; i++) {
 
-            var annotation = annotations[i];
+            var annotation = markup[i];
 
             // Where to insert
             var position = annotation.position;
@@ -42,60 +61,59 @@ editorApp.factory('EditorManipulatorService', ['APP_CONFIG', function($appconfig
             // We need to compensate the position because we already inserted stuff into the initial array
             var contextPosition = position + insertionCount; // Position accounting with already inserted code
 
-            inputTextAsArray.splice(contextPosition, 0, tag);
+            sourceTextAsArray.splice(contextPosition, 0, tag);
             ++insertionCount;
         }
 
-        var outputText = inputTextAsArray.join('');
+        var outputTextWithMarkup = sourceTextAsArray.join('');
+
+        var outputText = applyNuggetGlossary(nugget, outputTextWithMarkup);
 
         return outputText;
     }
 
-    // Grabs the nugget text and inserts the glossary annotations
-    function getTextWithGlossary(nugget) {
+    function applySlashes(input) {
+        return input.replace('/', '\\/');
+    }
 
-        // Extract glossary from nugget
-        var annotations = getNuggetGlossary(nugget);
+    function getPureText(textWithAnnotations) {
+        var div = document.createElement("div");
+        div.innerHTML = textWithAnnotations;
+        return div.textContent || div.innerText || "";
+    }
 
-        // Extract text from nugget
-        var inputText = getNuggetText(nugget);
+    function removeSpellcheckErrors(input) {
 
-        // Split input text for manipulation as array
-        var inputTextAsArray = inputText.split('');
+        var spellcheckOpenTag = applySlashes($appconfig.spellcheck.open_tag);
+        var spellcheckCloseTag = applySlashes($appconfig.spellcheck.close_tag);
 
-        // Highlight glossary
-        var insertionCount = 0;
-        for (var i = 0; i < annotations.length; i++) {
+        // Concatenate spellcheck tags
+        var spellcheckMatchConcat = spellcheckOpenTag + '(.+?)' + spellcheckCloseTag;
+        var matchspellcheckTerm = new RegExp(spellcheckMatchConcat, 'gi');
 
-            var annotation = annotations[i];
+        var spellcheckTermsFound = input.match(matchspellcheckTerm);
 
-            var open_at = annotation.start;
-            var close_at = open_at + annotation.length;
+        if ( spellcheckTermsFound ) {
+            for (var i = 0; i < spellcheckTermsFound.length; i++) {
+                var foundTag = spellcheckTermsFound[i];
+                // FIXME: RegExp needs to be created again, perhaps some index error exists. Would not find second term
+                var extractFromRegex = new RegExp(spellcheckMatchConcat, 'gi').exec(foundTag);
 
-            // Get glossary tag format
-            var open_tag = $appconfig.glossary.open_tag;
-            var close_tag = $appconfig.glossary.close_tag;
-
-            // Open - We need to compensate the position because we already inserted stuff into the initial array
-            var openPosition = open_at + insertionCount;
-            inputTextAsArray.splice(openPosition, 0, open_tag);
-            ++insertionCount;
-
-            // Close
-            var closePosition = close_at + insertionCount;
-            inputTextAsArray.splice(closePosition, 0, close_tag);
-            ++insertionCount;
+                if ( extractFromRegex ) {
+                    // Replace error tag with just the text inside
+                    input = input.replace(extractFromRegex[0], extractFromRegex[1]);
+                }
+            }
         }
 
-        var outputText = inputTextAsArray.join('');
-
-        return outputText;
+        return input;
     }
 
     // Expose api
     return {
         getText: getNuggetText,
-        getTextWithMarkup: getTextWithMarkup,
-        getTextWithGlossary: getTextWithGlossary,
+        getAnnotatedText: getTextWithMarkupAndGlossary,
+        getPureText: getPureText,
+        removeSpellcheckErrors: removeSpellcheckErrors,
     };
 }]);

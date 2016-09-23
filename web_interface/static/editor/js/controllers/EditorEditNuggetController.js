@@ -3,8 +3,8 @@ editorApp.controller('EditorEditNuggetController', ['$scope', 'EditorManipulator
     // The nugget - Defined in the directive
     //$scope.nugget = {};
 
-    $scope.textWithMarkup = EditorManipulatorService.getTextWithMarkup($scope.nugget);
-    $scope.textWithGlossary = EditorManipulatorService.getTextWithGlossary($scope.nugget);
+    $scope.textWithMarkup = EditorManipulatorService.getAnnotatedText($scope.nugget);
+    $scope.textWithGlossary = EditorManipulatorService.getAnnotatedText($scope.nugget);
     //$scope.textWithErrors = '<span class="editor-annotation editor-annotation--error">Atumj</span>';
     $scope.textWithErrors = '';
 
@@ -37,7 +37,6 @@ editorApp.controller('EditorEditNuggetController', ['$scope', 'EditorManipulator
     }
 
     function updateFromSmartCheck(data) {
-        console.log('smartcheck data', data);
     }
 
     $scope.$watch(function() {
